@@ -7,5 +7,3 @@
 //
 
 // Umbrella file
-
-#import "IDMMetadata.h"

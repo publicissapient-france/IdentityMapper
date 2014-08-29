@@ -20,7 +20,7 @@
  * Related metadata giving insights about object state
  * @param metadata metadata related to object. One instance of IDMMetadata is linked to one object only
  */
-@property(nonatomic, strong)IDMMetadata *metadata;
+@property(nonatomic, strong, readonly)IDMMetadata *metadata;
 
 /**
  * Object that we wish to store in order to being able to retrieve it
@@ -28,6 +28,9 @@
  * Weakly referenced so that as soon as no one is referencing it, it is "removed" from the identity map
  * @param identityObject the object to store
  */
-@property(nonatomic, weak)id            object;
+@property(nonatomic, weak, readonly)id            object;
+
++ (instancetype)identityWithObject:(id)object;
+- (instancetype)initWithObject:(id)object;
 
 @end

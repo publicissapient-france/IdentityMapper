@@ -16,6 +16,7 @@
 		498BB93919AE23A0006925C7 /* libIdentityMapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92119AE23A0006925C7 /* libIdentityMapper.a */; };
 		498BB95619AE2401006925C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498BB95219AE2401006925C7 /* InfoPlist.strings */; };
 		498BB95819AE2401006925C7 /* IdentityMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BB95519AE2401006925C7 /* IdentityMapperTests.m */; };
+		49D73BC719B10C0A000DA4A5 /* IDMIdentityMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		498BB95419AE2401006925C7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498BB95519AE2401006925C7 /* IdentityMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMapperTests.m; sourceTree = "<group>"; };
 		49A9CE9C19B0C9CB008BEBF6 /* IdentityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMapper.h; sourceTree = "<group>"; };
+		49D73BC519B10C0A000DA4A5 /* IDMIdentityMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMIdentityMap.h; sourceTree = "<group>"; };
+		49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMIdentityMap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				4949A48E19B0BD170061D290 /* IDMMetadata.m */,
 				4973094D19B0CD630081CDAE /* IDMIdentity.h */,
 				4973094E19B0CD630081CDAE /* IDMIdentity.m */,
+				49D73BC519B10C0A000DA4A5 /* IDMIdentityMap.h */,
+				49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4973094F19B0CD630081CDAE /* IDMIdentity.m in Sources */,
+				49D73BC719B10C0A000DA4A5 /* IDMIdentityMap.m in Sources */,
 				4949A48F19B0BD170061D290 /* IDMMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
