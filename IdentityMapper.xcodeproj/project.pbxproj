@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4949A48F19B0BD170061D290 /* IDMMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4949A48E19B0BD170061D290 /* IDMMetadata.m */; };
+		4973094F19B0CD630081CDAE /* IDMIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973094E19B0CD630081CDAE /* IDMIdentity.m */; };
 		498BB92519AE23A0006925C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92419AE23A0006925C7 /* Foundation.framework */; };
 		498BB93319AE23A0006925C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB93219AE23A0006925C7 /* XCTest.framework */; };
 		498BB93419AE23A0006925C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92419AE23A0006925C7 /* Foundation.framework */; };
 		498BB93619AE23A0006925C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB93519AE23A0006925C7 /* UIKit.framework */; };
 		498BB93919AE23A0006925C7 /* libIdentityMapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92119AE23A0006925C7 /* libIdentityMapper.a */; };
-		498BB95019AE23F8006925C7 /* IdentityMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BB94F19AE23F8006925C7 /* IdentityMapper.m */; };
 		498BB95619AE2401006925C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498BB95219AE2401006925C7 /* InfoPlist.strings */; };
 		498BB95819AE2401006925C7 /* IdentityMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BB95519AE2401006925C7 /* IdentityMapperTests.m */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4949A48D19B0BD170061D290 /* IDMMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMMetadata.h; sourceTree = "<group>"; };
+		4949A48E19B0BD170061D290 /* IDMMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMMetadata.m; sourceTree = "<group>"; };
+		4973094D19B0CD630081CDAE /* IDMIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMIdentity.h; sourceTree = "<group>"; };
+		4973094E19B0CD630081CDAE /* IDMIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMIdentity.m; sourceTree = "<group>"; };
 		498BB92119AE23A0006925C7 /* libIdentityMapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIdentityMapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		498BB92419AE23A0006925C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		498BB93119AE23A0006925C7 /* IdentityMapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentityMapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,11 +52,10 @@
 		498BB93519AE23A0006925C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		498BB94B19AE23C7006925C7 /* config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
 		498BB94D19AE23F8006925C7 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		498BB94E19AE23F8006925C7 /* IdentityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMapper.h; sourceTree = "<group>"; };
-		498BB94F19AE23F8006925C7 /* IdentityMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMapper.m; sourceTree = "<group>"; };
 		498BB95319AE2401006925C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		498BB95419AE2401006925C7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		498BB95519AE2401006925C7 /* IdentityMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMapperTests.m; sourceTree = "<group>"; };
+		49A9CE9C19B0C9CB008BEBF6 /* IdentityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMapper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +122,12 @@
 		498BB94C19AE23F8006925C7 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				49A9CE9C19B0C9CB008BEBF6 /* IdentityMapper.h */,
 				498BB95919AE245D006925C7 /* Supporting Files */,
-				498BB94E19AE23F8006925C7 /* IdentityMapper.h */,
-				498BB94F19AE23F8006925C7 /* IdentityMapper.m */,
+				4949A48D19B0BD170061D290 /* IDMMetadata.h */,
+				4949A48E19B0BD170061D290 /* IDMMetadata.m */,
+				4973094D19B0CD630081CDAE /* IDMIdentity.h */,
+				4973094E19B0CD630081CDAE /* IDMIdentity.m */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -224,7 +231,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498BB95019AE23F8006925C7 /* IdentityMapper.m in Sources */,
+				4973094F19B0CD630081CDAE /* IDMIdentity.m in Sources */,
+				4949A48F19B0BD170061D290 /* IDMMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +409,7 @@
 				498BB94619AE23A0006925C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		498BB94719AE23A0006925C7 /* Build configuration list for PBXNativeTarget "IdentityMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +418,7 @@
 				498BB94919AE23A0006925C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

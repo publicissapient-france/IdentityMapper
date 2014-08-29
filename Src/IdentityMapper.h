@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 fr.milkshake. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+// Umbrella file
 
-@interface IdentityMapper : NSObject
-
-@end
+#import "IDMMetadata.h"
