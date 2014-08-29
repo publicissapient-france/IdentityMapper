@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0693390E721D4182BD8AE57B /* libPods-IdentityMapperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 506F917F44984B43A24CD76A /* libPods-IdentityMapperTests.a */; };
 		4949A48F19B0BD170061D290 /* IDMMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4949A48E19B0BD170061D290 /* IDMMetadata.m */; };
 		4973094F19B0CD630081CDAE /* IDMIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973094E19B0CD630081CDAE /* IDMIdentity.m */; };
 		498BB92519AE23A0006925C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92419AE23A0006925C7 /* Foundation.framework */; };
@@ -15,7 +16,6 @@
 		498BB93619AE23A0006925C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB93519AE23A0006925C7 /* UIKit.framework */; };
 		498BB93919AE23A0006925C7 /* libIdentityMapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92119AE23A0006925C7 /* libIdentityMapper.a */; };
 		498BB95619AE2401006925C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498BB95219AE2401006925C7 /* InfoPlist.strings */; };
-		498BB95819AE2401006925C7 /* IdentityMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BB95519AE2401006925C7 /* IdentityMapperTests.m */; };
 		49D73BC719B10C0A000DA4A5 /* IDMIdentityMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */; };
 /* End PBXBuildFile section */
 
@@ -55,10 +55,12 @@
 		498BB94D19AE23F8006925C7 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		498BB95319AE2401006925C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		498BB95419AE2401006925C7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		498BB95519AE2401006925C7 /* IdentityMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityMapperTests.m; sourceTree = "<group>"; };
 		49A9CE9C19B0C9CB008BEBF6 /* IdentityMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityMapper.h; sourceTree = "<group>"; };
 		49D73BC519B10C0A000DA4A5 /* IDMIdentityMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMIdentityMap.h; sourceTree = "<group>"; };
 		49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMIdentityMap.m; sourceTree = "<group>"; };
+		49D73BC819B10E9A000DA4A5 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		506F917F44984B43A24CD76A /* libPods-IdentityMapperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IdentityMapperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		912184B6195E449AB9DF828C /* Pods-IdentityMapperTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentityMapperTests.xcconfig"; path = "Pods/Pods-IdentityMapperTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				498BB93319AE23A0006925C7 /* XCTest.framework in Frameworks */,
 				498BB93619AE23A0006925C7 /* UIKit.framework in Frameworks */,
 				498BB93419AE23A0006925C7 /* Foundation.framework in Frameworks */,
+				0693390E721D4182BD8AE57B /* libPods-IdentityMapperTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +95,7 @@
 				498BB92219AE23A0006925C7 /* Products */,
 				498BB94C19AE23F8006925C7 /* Src */,
 				498BB95119AE2401006925C7 /* Tests */,
+				912184B6195E449AB9DF828C /* Pods-IdentityMapperTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +114,7 @@
 				498BB92419AE23A0006925C7 /* Foundation.framework */,
 				498BB93219AE23A0006925C7 /* XCTest.framework */,
 				498BB93519AE23A0006925C7 /* UIKit.framework */,
+				506F917F44984B43A24CD76A /* libPods-IdentityMapperTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,7 +147,7 @@
 			children = (
 				498BB95219AE2401006925C7 /* InfoPlist.strings */,
 				498BB95419AE2401006925C7 /* Info.plist */,
-				498BB95519AE2401006925C7 /* IdentityMapperTests.m */,
+				49D73BC819B10E9A000DA4A5 /* Prefix.pch */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -179,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 498BB94719AE23A0006925C7 /* Build configuration list for PBXNativeTarget "IdentityMapperTests" */;
 			buildPhases = (
+				21F480023E634DC4B36A932C /* Check Pods Manifest.lock */,
 				498BB92D19AE23A0006925C7 /* Sources */,
 				498BB92E19AE23A0006925C7 /* Frameworks */,
 				498BB92F19AE23A0006925C7 /* Resources */,
+				534B23B353B644DDB20B4DD8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +238,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21F480023E634DC4B36A932C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		534B23B353B644DDB20B4DD8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-IdentityMapperTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		498BB91D19AE23A0006925C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -246,7 +286,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498BB95819AE2401006925C7 /* IdentityMapperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +405,7 @@
 		};
 		498BB94819AE23A0006925C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912184B6195E449AB9DF828C /* Pods-IdentityMapperTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -384,6 +424,7 @@
 		};
 		498BB94919AE23A0006925C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912184B6195E449AB9DF828C /* Pods-IdentityMapperTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
