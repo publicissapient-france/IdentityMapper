@@ -1,0 +1,5 @@
+language: objective-c
+
+xcode_workspace: IdentityMapper.xcworkspace
+xcode_scheme: IdentityMapper
+xcode_sdk: iphonesimulator
