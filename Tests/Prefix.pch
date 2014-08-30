@@ -1,15 +1,9 @@
 //
-//  Prefix.pch
-//  IdentityMapper
+// This file is part of IdentityMapper
 //
-//  Created by jc on 29/08/14.
-//  Copyright (c) 2014 fr.milkshake. All rights reserved.
+// Created by JC on 8/29/14.
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code
 //
 
-#ifndef IdentityMapper_Prefix_pch
-#define IdentityMapper_Prefix_pch
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
-#endif
+#import <Kiwi.h>

@@ -17,6 +17,7 @@
 		498BB93919AE23A0006925C7 /* libIdentityMapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92119AE23A0006925C7 /* libIdentityMapper.a */; };
 		498BB95619AE2401006925C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498BB95219AE2401006925C7 /* InfoPlist.strings */; };
 		49D73BC719B10C0A000DA4A5 /* IDMIdentityMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */; };
+		49D73BCA19B13322000DA4A5 /* IDMIdentityMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D73BC919B13322000DA4A5 /* IDMIdentityMapSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		49D73BC519B10C0A000DA4A5 /* IDMIdentityMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMIdentityMap.h; sourceTree = "<group>"; };
 		49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMIdentityMap.m; sourceTree = "<group>"; };
 		49D73BC819B10E9A000DA4A5 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		49D73BC919B13322000DA4A5 /* IDMIdentityMapSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMIdentityMapSpec.m; sourceTree = "<group>"; };
 		506F917F44984B43A24CD76A /* libPods-IdentityMapperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IdentityMapperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		912184B6195E449AB9DF828C /* Pods-IdentityMapperTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdentityMapperTests.xcconfig"; path = "Pods/Pods-IdentityMapperTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				498BB95219AE2401006925C7 /* InfoPlist.strings */,
 				498BB95419AE2401006925C7 /* Info.plist */,
 				49D73BC819B10E9A000DA4A5 /* Prefix.pch */,
+				49D73BC919B13322000DA4A5 /* IDMIdentityMapSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D73BCA19B13322000DA4A5 /* IDMIdentityMapSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
