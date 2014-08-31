@@ -50,7 +50,7 @@ describe(@"with an identity map with one object", ^{
     
     beforeEach(^{
         identityMap = [IDMIdentityMap new];
-        object = [NSURL nullMock];
+        object = [NSURL URLWithString:@"http://google.com"];
         
         [identityMap addObject:object key:objectKey];
     });
@@ -80,18 +80,18 @@ describe(@"with an identity map with one object", ^{
     });
     
     context(@"when adding an object with similar type", ^{
-        __block NSURL *clone;
+        __block NSURL *similar;
         
         beforeEach(^{
-            clone = [NSURL nullMock];
+            similar = [NSURL URLWithString:@"http://google.com"];
         });
         
         it(@"should add when key is different", ^{
-            [[theValue([identityMap addObject:clone key:@23]) should] beTrue];
+            [[theValue([identityMap addObject:similar key:@23]) should] beTrue];
         });
         
         it(@"should NOT add when key is same",  ^{
-            [[theValue([identityMap addObject:clone key:objectKey]) should] beFalse];
+            [[theValue([identityMap addObject:similar key:objectKey]) should] beFalse];
         });
     });
     
@@ -99,19 +99,19 @@ describe(@"with an identity map with one object", ^{
         __block NSArray *object2;
 
         beforeEach(^{
-            object2 = [NSArray nullMock];
+            object2 = @[];
         });
         
         it(@"should add when key is different", ^{
             [[theValue([identityMap addObject:object2 key:@23]) should] beTrue];
         });
         
-        it(@"should add when key is same",  ^{
+        it(@"should add when key is similar",  ^{
             [[theValue([identityMap addObject:object2 key:objectKey]) should] beTrue];
         });
         
         it(@"should remove both objects when key is same", ^{
-            __block int found = 0;
+            __block int notFound = 2;
             
             [identityMap addObject:object2 key:objectKey];
             
@@ -120,54 +120,72 @@ describe(@"with an identity map with one object", ^{
             
             [identityMap findObject:[object class]
                                 key:objectKey
-                          whenFound:^(id object, IDMMetadata *metadata) { found += 1; }];
+                          whenFound:^(id object, IDMMetadata *metadata) { notFound -= 1; }];
             
             [identityMap findObject:[object2 class]
                                 key:objectKey
-                          whenFound:^(id object, IDMMetadata *metadata) { found += 1; }];
+                          whenFound:^(id object, IDMMetadata *metadata) { notFound -= 1; }];
             
-            [[theValue(found) should] equal:theValue(2)];
+            [[theValue(notFound) should] equal:theValue(2)];
         });
     });
 });
 
 describe(@"with a Zeroing Weak References object", ^{
     __block NSObject *zwrObject;
-    __block IDMIdentity *objectIdentity;
-    
-    beforeEach(^{
-        @autoreleasepool {
-            zwrObject = [NSObject nullMock];
-            objectIdentity = [IDMIdentity identityWithObject:zwrObject];
-            
-            [IDMIdentity stub:@selector(identityWithObject:) andReturn:objectIdentity];
-            [identityMap addObject:zwrObject key:objectKey];
-            
-            zwrObject = nil;
-        }
-    });
     
     context(nil, ^{
+        beforeEach(^{
+            @autoreleasepool {
+                NSNumber *weakKey = @22;
+                zwrObject = [NSObject nullMock];
+                
+                [identityMap addObject:zwrObject key:weakKey];
+                
+                zwrObject = nil;
+            }
+        });
+        
         it(@"should not find the object", ^{
             __block BOOL found = NO;
 
-            [identityMap findObject:[NSObject class]
+            [identityMap findObject:[KWMock class]
                                 key:objectKey
                           whenFound:^(id object, IDMMetadata *metadata) { found = YES; }];
             
             [[theValue(found) should] beFalse];
         });
         
-        it(@"object identity should be nil", ^{
-            [[objectIdentity.object should] beNil];
+        context(@"when adding an object with similar type", ^{
+            it(@"should add when key is same", ^ {
+                NSObject *similarObject = [NSObject nullMock];
+                
+                [[theValue([identityMap addObject:similarObject key:objectKey]) should] beTrue];
+            });
         });
     });
     
-    context(@"when adding an object with similar type", ^{
-        it(@"should add when key is same", ^ {
-            NSObject *similarObject = [NSObject nullMock];
+    context(@"with maptable", ^{
+        __block NSMapTable *mapTable;
+
+        beforeEach(^{
+            mapTable = [NSMapTable weakToWeakObjectsMapTable];
+            [NSMapTable stub:@selector(weakToWeakObjectsMapTable) andReturn:mapTable];
             
-            [[theValue([identityMap addObject:similarObject key:objectKey]) should] beTrue];
+            @autoreleasepool {
+                NSNumber *weakKey = @22;
+                zwrObject = [NSObject nullMock];
+                
+                [identityMap addObject:zwrObject key:weakKey];
+                
+                zwrObject = nil;
+            }
+        });
+        
+        it(@"should be empty", ^{
+            [[theValue(mapTable.count) should] equal:theValue(0)];
+            [[theValue(mapTable.objectEnumerator.allObjects.count) should] equal:theValue(0)];
+            [[theValue(mapTable.keyEnumerator.allObjects.count) should] equal:theValue(0)];
         });
     });
 });
