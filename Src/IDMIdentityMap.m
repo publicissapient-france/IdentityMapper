@@ -8,7 +8,10 @@
 
 #import "IDMIdentityMap.h"
 
-#import "IDMIdentity.h"
+#import "IDMMetadata.h"
+#import <objc/objc-runtime.h>
+
+NSString *const IDMObjectMetadataAttribute;
 
 @interface IDMIdentityMap ()
 @property(nonatomic, strong)NSMutableDictionary *map;
@@ -27,32 +30,26 @@
 
 - (void)findObject:(Class)objectClass key:(id)objectKey whenFound:(IDMIdentityFoundBlock)found {
     NSString *type = NSStringFromClass(objectClass);
-    IDMIdentity *identity = self.map[type][objectKey];
+    id object = [self.map[type] objectForKey:objectKey];
     
-    if (identity) {
-        // object found
-        if (identity.object)
-            return found(identity.object, identity.metadata);
-        
-        // object identity found but object has been released: clean a little bit
-        [self.map[type] removeObjectForKey:objectKey];
-    }
+    if (object)
+        found(object, objc_getAssociatedObject(object, &IDMObjectMetadataAttribute));
 }
 
-- (BOOL)addObject:(id)object key:(id<NSCopying>)objectKey {
+- (BOOL)addObject:(id)object key:(id)objectKey {
     NSString *type = NSStringFromClass([object class]);
-    NSMutableDictionary *mapType = self.map[type];
+    NSMapTable *mapType = self.map[type];
     
     if (!mapType) {
-        mapType = [NSMutableDictionary new];
+        mapType = [NSMapTable weakToWeakObjectsMapTable];
         self.map[type] = mapType;
     }
     
-    // No identity or identity object has been released
-    if (!mapType[objectKey] || ![mapType[objectKey] object]) {
-        IDMIdentity *identity = [IDMIdentity identityWithObject:object];
+    if (![mapType objectForKey:objectKey]) {
+        IDMMetadata *objectMetadata = [IDMMetadata new];
         
-        mapType[objectKey] = identity;
+        [mapType setObject:object forKey:objectKey];
+        objc_setAssociatedObject(object, &IDMObjectMetadataAttribute, objectMetadata, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         return YES;
     }
@@ -60,7 +57,7 @@
     return NO;
 }
 
-- (void)removeObject:(id)object key:(id<NSCopying>)objectKey {
+- (void)removeObject:(id)object key:(id)objectKey {
     [self.map[NSStringFromClass([object class])] removeObjectForKey:objectKey];
 }
 

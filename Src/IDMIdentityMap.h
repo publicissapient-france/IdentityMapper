@@ -18,8 +18,8 @@ typedef void(^IDMIdentityFoundBlock)(id object, IDMMetadata *metadata);
                key:(id)objectKey
          whenFound:(IDMIdentityFoundBlock)found;
 
-- (BOOL)addObject:(id)object key:(id<NSCopying>)objectKey;
+- (BOOL)addObject:(id)object key:(id)objectKey;
 
-- (void)removeObject:(id)object key:(id<NSCopying>)objectKey;
+- (void)removeObject:(id)object key:(id)objectKey;
 
 @end
