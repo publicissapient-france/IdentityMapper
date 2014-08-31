@@ -7,3 +7,5 @@
 //
 
 // Umbrella file
+#import "IDMIdentityMap.h"
+#import "IDMMetadata.h"
