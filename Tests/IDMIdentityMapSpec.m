@@ -8,9 +8,8 @@
 
 #import "IDMIdentityMap.h"
 #import "IDMMetadata.h"
-#import "IDMIdentity.h"
 
-SPEC_BEGIN(IDMIdentityMapSpec)
+SPEC_BEGIN(IDMIdentityMapTests)
 
 __block IDMIdentityMap  *identityMap;
 const NSNumber  *objectKey = @22;

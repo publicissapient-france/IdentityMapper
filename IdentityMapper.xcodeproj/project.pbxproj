@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0693390E721D4182BD8AE57B /* libPods-IdentityMapperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 506F917F44984B43A24CD76A /* libPods-IdentityMapperTests.a */; };
 		4949A48F19B0BD170061D290 /* IDMMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4949A48E19B0BD170061D290 /* IDMMetadata.m */; };
-		4973094F19B0CD630081CDAE /* IDMIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4973094E19B0CD630081CDAE /* IDMIdentity.m */; };
 		498BB92519AE23A0006925C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92419AE23A0006925C7 /* Foundation.framework */; };
 		498BB93319AE23A0006925C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB93219AE23A0006925C7 /* XCTest.framework */; };
 		498BB93419AE23A0006925C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498BB92419AE23A0006925C7 /* Foundation.framework */; };
@@ -45,8 +44,6 @@
 /* Begin PBXFileReference section */
 		4949A48D19B0BD170061D290 /* IDMMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMMetadata.h; sourceTree = "<group>"; };
 		4949A48E19B0BD170061D290 /* IDMMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMMetadata.m; sourceTree = "<group>"; };
-		4973094D19B0CD630081CDAE /* IDMIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMIdentity.h; sourceTree = "<group>"; };
-		4973094E19B0CD630081CDAE /* IDMIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMIdentity.m; sourceTree = "<group>"; };
 		498BB92119AE23A0006925C7 /* libIdentityMapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIdentityMapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		498BB92419AE23A0006925C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		498BB93119AE23A0006925C7 /* IdentityMapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IdentityMapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +133,6 @@
 				498BB95919AE245D006925C7 /* Supporting Files */,
 				4949A48D19B0BD170061D290 /* IDMMetadata.h */,
 				4949A48E19B0BD170061D290 /* IDMMetadata.m */,
-				4973094D19B0CD630081CDAE /* IDMIdentity.h */,
-				4973094E19B0CD630081CDAE /* IDMIdentity.m */,
 				49D73BC519B10C0A000DA4A5 /* IDMIdentityMap.h */,
 				49D73BC619B10C0A000DA4A5 /* IDMIdentityMap.m */,
 			);
@@ -279,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4973094F19B0CD630081CDAE /* IDMIdentity.m in Sources */,
 				49D73BC719B10C0A000DA4A5 /* IDMIdentityMap.m in Sources */,
 				4949A48F19B0BD170061D290 /* IDMMetadata.m in Sources */,
 			);
