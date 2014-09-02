@@ -5,8 +5,9 @@ env:
   xcode_scheme: IdentityMapper
   xcode_sdk: iphonesimulator
 
-install:
+before_install:
   - gem install xcpretty
+  
 
 script:
   - set -o pipefail && xcodebuild -workspace ${xcode_workspace} -scheme ${xcode_scheme}  -sdk ${xcode_sdk} build test | xcpretty -c
