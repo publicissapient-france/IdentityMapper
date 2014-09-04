@@ -12,5 +12,9 @@ before_install:
 script:
   - set -o pipefail && xcodebuild -workspace ${xcode_workspace} -scheme ${xcode_scheme}  -sdk ${xcode_sdk} build test | xcpretty -c
 
+branches:
+  except:
+    - /^tags.+/ 
+
 notifications:
   email: false
