@@ -9,7 +9,7 @@
 #import "IDMIdentityMap.h"
 
 #import "IDMMetadata.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 NSString *const IDMObjectMetadataAttribute;
 
@@ -29,20 +29,26 @@ NSString *const IDMObjectMetadataAttribute;
 }
 
 - (void)findObject:(Class)objectClass key:(id)objectKey whenFound:(IDMIdentityFoundBlock)found {
-    NSString *type = NSStringFromClass(objectClass);
-    id object = [self.map[type] objectForKey:objectKey];
+    return [self findObjectWithIdentifier:NSStringFromClass(objectClass) key:objectKey whenFound:found];
+}
+
+- (void)findObjectWithIdentifier:(NSString *)classIdentifier key:(id)objectKey whenFound:(IDMIdentityFoundBlock)found {
+    id object = [self.map[classIdentifier] objectForKey:objectKey];
     
     if (object)
         found(object, objc_getAssociatedObject(object, &IDMObjectMetadataAttribute));
 }
 
 - (BOOL)addObject:(id)object key:(id)objectKey {
-    NSString *type = NSStringFromClass([object class]);
-    NSMapTable *mapType = self.map[type];
+    return [self addObject:object identifier:NSStringFromClass([object class]) key:objectKey];
+}
+
+- (BOOL)addObject:(id)object identifier:(NSString *)classIdentifier key:(id)objectKey {
+    NSMapTable *mapType = self.map[classIdentifier];
     
     if (!mapType) {
         mapType = [NSMapTable weakToWeakObjectsMapTable];
-        self.map[type] = mapType;
+        self.map[classIdentifier] = mapType;
     }
     
     if (![mapType objectForKey:objectKey]) {
