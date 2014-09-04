@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name		= "IdentityMapper"
-  s.version		= "0.0.2"
+  s.version		= "0.0.3"
   s.source		= { :git => "https://github.com/pjechris/IdentityMapper.git",
   		     	    :tag => s.version.to_s }
 
