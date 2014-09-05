@@ -168,20 +168,20 @@ describe(@"with a Zeroing Weak References object", ^{
         __block NSMapTable *mapTable;
 
         beforeEach(^{
-            mapTable = [NSMapTable weakToWeakObjectsMapTable];
-            [NSMapTable stub:@selector(weakToWeakObjectsMapTable) andReturn:mapTable];
-            
             @autoreleasepool {
                 NSNumber *weakKey = @22;
                 zwrObject = [NSObject nullMock];
                 
                 [identityMap addObject:zwrObject key:weakKey];
-                
+                mapTable = [[identityMap valueForKey:@"map"] objectForKey:@"KWMock"];
+
                 zwrObject = nil;
             }
         });
         
         it(@"should be empty", ^{
+            [[mapTable should] beNonNil];
+            
             [[theValue(mapTable.count) should] equal:theValue(0)];
             [[theValue(mapTable.objectEnumerator.allObjects.count) should] equal:theValue(0)];
             [[theValue(mapTable.keyEnumerator.allObjects.count) should] equal:theValue(0)];
