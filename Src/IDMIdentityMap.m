@@ -9,6 +9,7 @@
 #import "IDMIdentityMap.h"
 
 #import "IDMMetadata.h"
+#import "IDMIdentityStorage.h"
 #import <objc/runtime.h>
 
 NSString *const IDMObjectMetadataAttribute;
@@ -35,8 +36,10 @@ NSString *const IDMObjectMetadataAttribute;
 - (void)findObjectWithIdentifier:(NSString *)classIdentifier key:(id)objectKey whenFound:(IDMIdentityFoundBlock)found {
     id object = [self.map[classIdentifier] objectForKey:objectKey];
     
-    if (object)
-        found(object, objc_getAssociatedObject(object, &IDMObjectMetadataAttribute));
+    if (object) {
+        IDMIdentityStorage *storage = objc_getAssociatedObject(object, &IDMObjectMetadataAttribute);
+        found(object, storage.metadata);
+    }
 }
 
 - (BOOL)addObject:(id)object key:(id)objectKey {
@@ -44,18 +47,21 @@ NSString *const IDMObjectMetadataAttribute;
 }
 
 - (BOOL)addObject:(id)object identifier:(NSString *)classIdentifier key:(id)objectKey {
-    NSMapTable *mapType = self.map[classIdentifier];
+    NSMapTable *classType = self.map[classIdentifier];
     
-    if (!mapType) {
-        mapType = [NSMapTable weakToWeakObjectsMapTable];
-        self.map[classIdentifier] = mapType;
+    if (!classType) {
+        classType = [NSMapTable weakToWeakObjectsMapTable];
+
+        self.map[classIdentifier] = classType;
     }
     
-    if (![mapType objectForKey:objectKey]) {
-        IDMMetadata *objectMetadata = [IDMMetadata new];
-        
-        [mapType setObject:object forKey:objectKey];
-        objc_setAssociatedObject(object, &IDMObjectMetadataAttribute, objectMetadata, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (![classType objectForKey:objectKey]) {
+        IDMIdentityStorage *objectStorage = [IDMIdentityStorage storageWithIdentityMap:self identifier:classIdentifier key:objectKey];
+
+        objectStorage.metadata = [IDMMetadata new];
+
+        [classType setObject:object forKey:objectKey];
+        objc_setAssociatedObject(object, &IDMObjectMetadataAttribute, objectStorage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         return YES;
     }

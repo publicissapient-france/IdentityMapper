@@ -20,13 +20,11 @@ typedef void(^IDMIdentityFoundBlock)(id object, IDMMetadata *metadata);
  * but any arbitrary string can be used
  * - an **object key** which identify the object uniquely among its family
  *
- * To insert or find an object you will be asked to provide those 2 information. It is up to you to ensure to always
- * provide same class and object keys for a given object to ensure uniqueness
+ * To insert or find an object you will be asked to provide those 2 information
  *
  * Objects are **weakly stored** into the map and so they stay inside it as long as they are used/retained by the application. As soon
  * as an object is released from the application it is removed from the map.
  *
- * Note that object keys are also stored weakly: you should ensure that their lifecyles are the same than their associated objects
  */
 @interface IDMIdentityMap : NSObject
 
@@ -50,6 +48,8 @@ typedef void(^IDMIdentityFoundBlock)(id object, IDMMetadata *metadata);
 
 - (BOOL)addObject:(id)object identifier:(NSString *)classIdentifier key:(id)objectKey;
 - (BOOL)addObject:(id)object key:(id)objectKey;
+
+- (void)removeIdentifier:(NSString *)classIdentifier key:(id)objectKey;
 
 - (void)removeObject:(id)object key:(id)objectKey;
 
