@@ -64,7 +64,11 @@ NSString *const IDMObjectMetadataAttribute;
 }
 
 - (void)removeObject:(id)object key:(id)objectKey {
-    [self.map[NSStringFromClass([object class])] removeObjectForKey:objectKey];
+    [self removeIdentifier:NSStringFromClass([object class]) key:objectKey];
+}
+
+- (void)removeIdentifier:(NSString *)classIdentifier key:(id)objectKey {
+    [self.map[classIdentifier] removeObjectForKey:objectKey];
 }
 
 @end
