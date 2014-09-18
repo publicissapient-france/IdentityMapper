@@ -1,4 +1,4 @@
-IdentityMapper ![travis-ci](https://travis-ci.org/pjechris/IdentityMapper.svg)
+IdentityMapper [![Travis](https://travis-ci.org/xebia-france/IdentityMapper.svg)](https://travis-ci.org/xebia-france/IdentityMapper) [![Coverage Status](https://img.shields.io/coveralls/pjechris/IdentityMapper.svg)](https://coveralls.io/r/pjechris/IdentityMapper)
 ==============
 
 IdentityMapper is an implementation of the [identity map pattern](http://martinfowler.com/eaaCatalog/identityMap.html).
