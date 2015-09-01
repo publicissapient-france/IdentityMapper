@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name		  = "IdentityMapper"
-  s.version		  = "0.0.4"
+  s.version		  = "0.5.0"
   s.source		  = { :git => "https://github.com/pjechris/IdentityMapper.git",
   		     	    :tag => s.version.to_s }
 
@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "6.0"
   s.osx.deployment_target = "10.8"
+  s.watchos.deployment_target = "2.0"
   s.source_files    	  = 'Src/**/*.{h,m}'
   s.prefix_header_file    = "Src/#{s.name}.h"
   s.private_header_files  = [ 'Src/IDMIdentityStorage.h' ]
