@@ -11,7 +11,7 @@ IdentityMapper intend to bring this pattern to your Objective-C applications. No
 
 ## Installation
 
-Installation has never been so easy thanks to Cocoapods:
+Installation has never been so easy thanks to CocoaPods:
 
 1. Add IdentityMapper to your Podfile ```pod 'IdentityMapper'```
 2. Run ```pod install```
